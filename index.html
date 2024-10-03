@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Hunter</title>
+    <!-- cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.11/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <header class="py-4 border-b border-gray-300 bg-gray-700 text-white">
+        <nav class="w-11/12 mx-auto flex gap-2  flex-col justify-center items-center">
+            <h1 class="text-lg font-semibold">Search your phone</h1>
+            <div>
+                <label class="input input-bordered flex items-center gap-2">
+                    <input id="input" type="text" class="grow text-black" placeholder="Search" />
+                    <button id="search"> 
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 16 16"
+                          fill="currentColor"
+                          class="h-4 w-4 opacity-70 text-black">
+                          <path
+                            fill-rule="evenodd"
+                            d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                            clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </label>
+            </div>
+        </nav>
+    </header>
+    <!-- <span class="loading loading-dots loading-lg"></span> -->
+    <main class="w-11/12 mx-auto py-6 flex gap-2 flex-col items-center">
+        <button onclick="showAll()" id="show" class="btn">Show All</button>
+
+        <span id="spin" class="hidden loading loading-dots loading-lg"></span>
+
+        <section id="phonesContainer" class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-6">
+
+        </section>
+    </main>
+
+    <dialog id="modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="modal-content">
+  
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+    </dialog>
+
+    <script src="./app.js"></script>
+</body>
+</html>
